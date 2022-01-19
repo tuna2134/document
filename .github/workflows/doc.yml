@@ -22,8 +22,8 @@ jobs:
           git config --global user.email "masato190411@gmail.com"
           git add .
           git commit -m "add document"
-          git checkout -b main
-          git push origin main
+          git checkout -b master
+          git push origin master
       # - uses: peaceiris/actions-gh-pages@v3
         # with:
           # personal_token: ${{ secrets.PERSONAL_TOKEN }}
