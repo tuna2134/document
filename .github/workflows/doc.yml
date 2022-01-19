@@ -13,6 +13,8 @@ jobs:
       - run: pip install mkdocs
       # まず、ビルドします。
       - run: mkdocs new docs
+      - run: ls -la | grep docs
+      - run: find docs/ -type f
       - uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
