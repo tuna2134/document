@@ -15,13 +15,22 @@ jobs:
       - run: mkdocs new docs
       - run: ls -la | grep docs
       - run: find docs/ -type f
-      - uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+      - name: Commit and Push
+        run: |
+          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+          git config --global user.name "tuna2134"
+          git config --global user.email "masato190411@gmail.com"
+          git add .
+          git commit -m "add document"
+          git checkout -b main
+          git push origin main
+      # - uses: peaceiris/actions-gh-pages@v3
+        # with:
+          # personal_token: ${{ secrets.PERSONAL_TOKEN }}
           # デプロイ元リポジトリーとデプロイ先が異なる場合、
           # external_repository を指定します。
-          external_repository: tuna2134/document
+          # external_repository: tuna2134/document
           # publish_branch を指定しない場合、
           # gh-pages ブランチにデプロイされます。
-          publish_branch: master
-          publish_dir: ./site
+          # publish_branch: master
+          # publish_dir: ./site
