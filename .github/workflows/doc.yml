@@ -18,7 +18,7 @@ jobs:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           # デプロイ元リポジトリーとデプロイ先が異なる場合、
           # external_repository を指定します。
-          external_repository: github-user-name/github-repository-name
+          external_repository: tuna2134/document
           # publish_branch を指定しない場合、
           # gh-pages ブランチにデプロイされます。
           publish_branch: master
